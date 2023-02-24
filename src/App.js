@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Createstream from "./pages/Createstream";
+import Liststream  from "./pages/Liststream";
+import Joinstream from "./pages/Joinstream";
+export default function App(){
+return(
+<div className="h-screen w-screen  bg-gray-100  m-auto">
+<BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/createstream" element={<Createstream />} />
+          <Route path="/live" element={<Liststream /> } />
+          <Route path="/join/:uid" element={<Joinstream />}  />
+      </Routes>
+      </BrowserRouter>
+      </div>
+);
 }
-
-export default App;
